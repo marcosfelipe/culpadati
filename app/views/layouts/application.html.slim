@@ -1,0 +1,46 @@
+doctype
+html
+  head
+    title
+      | Culpa da TI
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+
+    div.right
+      - if current_user
+        = link_to "Admin", admin_path
+        |/
+        = link_to "Logout", :logout, method: :post
+
+    header#header
+      = link_to(image_tag('logo.gif'),'/')
+      h1
+        | Culpa da TI
+      .coment
+        | ... ou do cliente.
+
+      nav#navigation
+        li
+          = link_to('Autores','#')
+          | ·
+        li
+          = link_to('Ver GIF Aleatório', post_random_path)
+          | ·
+        li
+          = link_to('Mande seu GIF', :hint)
+
+
+    p.notice
+      = flash[:notice]
+    p.alert
+      = flash[:alert]
+
+
+    .container
+      = yield
+
+
+    footer#footer.footer
+      | © 2014 Culpa da TI

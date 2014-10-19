@@ -1,0 +1,27 @@
+.content
+  h2 Listing admin_users
+
+  table
+    thead
+      tr
+        th Email
+        th Crypted password
+        th Salt
+        th
+        th
+        th
+
+    tbody
+      - @admin_users.each do |admin_user|
+        - if current_user.id != admin_user.id
+          tr
+            td = admin_user.email
+            td = admin_user.crypted_password
+            td = admin_user.salt
+            td = link_to 'Show', admin_user_path(admin_user)
+            td = link_to 'Edit', edit_admin_user_path(admin_user)
+            td = link_to 'Destroy', admin_user_path(admin_user), data: {:confirm => 'Are you sure?'}, :method => :delete
+
+  br
+
+  = link_to 'New User', new_admin_user_path

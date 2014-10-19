@@ -1,0 +1,39 @@
+
+.content
+  h2
+    | Posts
+  table
+    thead
+      th
+        | Gif
+      th
+        | Título
+      th
+        | Autor
+      th
+        | Criado em
+      th
+        |
+    tbody
+      - @posts.each do |post|
+        tr
+          td
+            |
+            = image_tag post.image.url(:thumb)
+          td
+            | #{post.title}
+          td
+            | #{post.author}
+          td
+            | #{post.created_at}
+          td
+            |
+            = link_to('ver',admin_post_path(post))
+            | |
+            = link_to('editar',edit_admin_post_path(post))
+            | |
+            = link_to('excluir', admin_post_path(post), {:method => 'delete', 'data-confirm' => 'Tem certeza?'})
+
+  = will_paginate @posts
+
+  = link_to('Novo Post', new_admin_post_path)

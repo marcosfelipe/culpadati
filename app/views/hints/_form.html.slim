@@ -1,0 +1,27 @@
+= form_for(@post, url:{controller: 'hints', action:'create'}, :html => { :class => "" }) do |f|
+  - if @post.errors.any?
+    .alert.alert-danger.alert-dismissable
+      h4= "#{pluralize(@post.errors.count,"error")} prohibited this posts from being saved:"
+      ul
+        - @post.errors.full_messages.each do |msg|
+          li= msg
+  div
+    = f.label :title, 'Título', :class => ""
+    div
+      = f.text_field :title, :class => ""
+  div
+    = f.label :text, 'Texto', :class => ""
+    div
+      = f.text_area :text, :class => ""
+  div
+    = f.label :author, 'Autor', :class => ""
+    div
+      = f.text_field :author, :class => ""
+  div
+    = f.label :image, 'Gif', :class => ""
+    div
+      = f.file_field :image, :class => ""
+  br
+  div
+    div
+      = f.submit 'Enviar', :class => "btn btn-primary"

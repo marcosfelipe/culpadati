@@ -1,0 +1,26 @@
+= form_for([:admin,@post], :html => { :class => "" }) do |f|
+  - if @post.errors.any?
+    .alert.alert-danger.alert-dismissable
+      h4= "#{pluralize(@post.errors.count,"error")} prohibited this post from being saved:"
+      ul
+        - @post.errors.full_messages.each do |msg|
+          li= msg
+  div
+    = f.label :title, :class => ""
+    div
+      = f.text_field :title, :class => ""
+  div
+    = f.label :text, :class => ""
+    div
+      = f.text_area :text, :class => ""
+  div
+    = f.label :author, :class => ""
+    div
+      = f.text_field :author, :class => ""
+  div
+    = f.label :image, :class => ""
+    div
+      = f.file_field :image, :class => ""
+  div
+    div
+      = f.submit :class => "btn btn-primary"

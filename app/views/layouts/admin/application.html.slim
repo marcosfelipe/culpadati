@@ -1,0 +1,55 @@
+doctype
+html
+  head
+    title
+      | Culpa da TI
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+
+
+    div.right
+      - if current_user
+        = link_to "Perfil", edit_admin_user_path(current_user.id)
+        |\
+        = link_to "Logout", :logout, method: :post
+      - else
+        = link_to "Register", new_admin_user_path
+        | \
+        = link_to "Login", login_path
+
+    header#header
+      = link_to(image_tag('logo.gif'),'/')
+      h1
+        | Culpa da TI
+      .coment
+        | ... ou do cliente.
+      h2
+        | Admin
+
+      nav#navigation
+        li
+          = link_to('Admin',admin_path)
+          | ·
+        li
+          = link_to('Posts',admin_posts_path)
+          | ·
+        li
+          = link_to('Usuários',admin_users_path)
+          | ·
+        li
+          = link_to('Sugestões',admin_hints_path)
+
+    p.notice
+      = flash[:notice]
+    p.alert
+      = flash[:alert]
+
+
+    .container
+      = yield
+
+
+    footer#footer.footer
+      | © 2014 Culpa da TI

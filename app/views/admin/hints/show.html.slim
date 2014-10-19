@@ -1,0 +1,32 @@
+
+.content
+  = link_to('<- posts', admin_posts_path)
+
+  h2
+    | post
+  div
+    | Título:
+    b
+      |  #{@post.title}
+  div
+    | Texto:
+    b
+      |  #{@post.text}
+  div
+    | Autor:
+    b
+      |  #{@post.author}
+  div
+    | Gif:
+    b
+      |
+      =image_tag @post.image.url
+  div
+    | Criado em:
+    b
+      |  #{@post.created_at}
+
+  div
+    = link_to('aceitar',admin_hint_path(@post), {:method => 'patch', 'data-confirm' => 'Deseja aceitar?'})
+    | |
+    = link_to('excluir', admin_hint_path(@post), {:method => 'delete', 'data-confirm' => 'Tem certeza?'})

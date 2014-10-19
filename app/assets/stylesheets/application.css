@@ -1,0 +1,752 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+
+
+/*      Settings     */
+
+*, *:before, *:after {-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+
+html{
+    overflow-x:hidden;
+    overflow-y:scroll;
+    position:relative;
+    left:0;
+    right:0;
+    background:#ffffff url("http://assets.tumblr.com/images/x.gif") repeat
+}
+
+body{
+    height:100%;
+    margin:10px auto;
+    padding:0;
+    font:14px/1.8em 'Source Code Pro', "Arial", san-serif;
+    color:#777777
+}
+
+
+table{
+    border-collapse: collapse;
+}
+
+table thead th{
+    font-weight: bold;
+    border: 1px solid #bbb;
+}
+
+table tr td{
+    border: 1px solid #ccc;
+    padding:3px;
+}
+
+a,a:hover{
+    cursor:pointer;
+    word-wrap:break-word;
+    text-decoration:none;
+    color:#6e8296
+}
+
+a:hover{
+    color:#239fc5
+}
+
+img{
+    display:block;
+    position:relative
+}
+
+img:hover{
+    opacity:.85
+}
+
+h1,h2,h3,h4,h5{
+    margin:0 0 10px;
+    font:700 16px/1.2em "Helvetica Neue","Helvetica Neue",sans-serif;
+    text-shadow:0 1px 0 1px rgba(0,0,0,.3);
+    color:#555555
+}
+
+h1{font-size:43px;font-family: 'Source Code Pro', Courier;}
+h2{font-size:25px}
+h3{font-size:20px}
+
+blockquote{
+    padding:0 0 0 20px;
+    margin:0;
+    font-style:italic;
+    border-left:4px solid #f2f2f2
+}
+
+ul{
+    padding:0
+}
+
+li{
+    list-style-position:inside
+}
+
+.content{
+    width:980px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+a,
+img,
+.like_button,
+a#install-button,
+.entry .text a.link:after,
+.mfp-fade.mfp-bg,
+.mfp-fade.mfp-wrap .mfp-content{
+    -webkit-transition:.3s;
+    transition:.3s
+}
+
+a#install-button{
+    width:100px;
+    height:20px;
+    padding:2px 4px;
+    background:url("http://static.tumblr.com/3zmswwt/soKmzhmhg/install_button.png") rgba(0,0,0,.4) no-repeat;
+    border:1px solid rgba(0,0,0,0.18);
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+    z-index:100;
+    top:-30px;
+    right:5px;
+    position:fixed
+}
+
+a#install-button:hover{
+    background:url("http://static.tumblr.com/3zmswwt/soKmzhmhg/install_button.png") rgba(0,0,0,.32) no-repeat
+}
+
+span#install-theme-text{
+    float:right;
+    font:400 12px Arial;
+    text-shadow:1px 1px 1px rgba(0,0,0,.08);
+    color:white
+}
+
+#tumblr_controls{
+    position:fixed;
+    top:0;
+}
+
+.like_button{
+    position:absolute;
+    opacity:0
+}
+
+.like_button.liked{
+    opacity:1 !important
+}
+
+/*      End-Setting     */
+
+#header{
+    width:100%;
+    margin:0 0 60px;
+    padding:0 0 30px;
+    border-bottom:2px solid #f2f2f2
+}
+
+#header img{
+    display:inline;
+    height:60px;
+    margin:0 20px 0 0
+}
+
+#header #title{
+    display:inline-block;
+    vertical-align:top
+}
+
+#header #title h1{
+    margin:0
+}
+
+#header #title h1 a{
+
+    font: 30px "Helvetica Neue";
+    color:#000000
+}
+
+#header #title #subtitle{
+    font-size:.9em;
+    color:#aaaaaa
+}
+
+#header #navigation{
+    float:right;
+    display:inline-block;
+    margin:35px 0 0;
+    vertical-align:bottom;
+    text-align:right
+}
+
+#header #navigation li{
+    display:inline-block;
+    list-style-type:none
+}
+
+#header #navigation li a{
+    margin:0 0 0 20px;
+    font-size:.9em;
+    color:#00B80F
+}
+
+#header #navigation li a:hover{
+    color:#414141
+}
+
+
+p.notice{
+    text-align: center;
+    background: #CAFFBA;
+    color:#00B80F;
+}
+
+p.alert{
+    text-align: center;
+    background: #FFDADA;
+    color:#ff0000;
+}
+
+
+#header{
+    margin:0 auto 20px;
+    padding:0 0 30px;
+    text-align:center
+}
+
+#header img{
+    display:block;
+    height:auto;
+    width:90px;
+    margin:0 auto
+}
+
+#header #title{
+    display:inline-block;
+    margin:10px auto 0;
+    vertical-align:auto
+}
+
+#header #title h1{
+    margin:0
+}
+
+#header #title #subtitle{
+    margin:5px 0 0
+}
+
+#header #navigation{
+    float:none;
+    display:block;
+    margin:0px;
+    text-align:center
+}
+
+#header #navigation li{
+    float:none
+}
+
+#header #navigation li a{
+    margin:0 10px
+}
+
+
+
+/*      End-header     */
+
+#posts{
+    position:relative
+}
+
+#post-info{
+    margin:0 auto 60px;
+    padding:0 0 60px;
+    text-align:center;
+    border-bottom:2px solid #f2f2f2
+}
+
+#post-info h3{
+    display:inline;
+    margin:0
+}
+
+#post-info p{
+    margin:30px 0 0
+}
+
+.entry{
+    position:relative;
+    margin:0 auto 10px
+}
+
+.entry p,
+.entry blockquote{
+    margin:0 0 30px
+}
+
+.entry p:last-child{
+    margin:0 !important
+}
+
+.entry .media iframe{
+    display:block;
+    width:100%
+}
+
+.entry .photo{
+    width:90%;
+    max-width:1100px;
+    margin:auto
+}
+
+.entry .photo img{
+    max-width:100%;
+    margin:auto
+}
+
+.entry .photo.photoset img{
+    max-width:100%
+}
+
+.entry .text{
+    position:relative
+}
+
+.entry .text .question{
+    margin:0 0 30px;
+    padding:20px;
+    background:rgba(119,119,119,.08);
+    border-radius:2px
+}
+
+.entry .text .question h3{
+    font:14px/2em "Arial";
+    color:#777777
+}
+
+.entry .text .odd,
+.entry .text .even{
+    margin:5px 0 0 0;
+    padding:10px;
+    border-radius:2px
+}
+
+.entry .text .odd{
+    background:rgba(119,119,119,.08)
+}
+
+.entry .text a.link{
+    display:block;
+    position:relative;
+    margin:0 0 30px;
+    padding:25px;
+    font:18px/20px "Helvetica Neue";
+    color:#fff !important;
+    background:#6e8296;
+    border-radius:3px
+}
+
+.entry .text a.link:after{
+    content:"n";
+    position:absolute;
+    right:15px;
+    top:50%;
+    font:35px/0 "icon";
+    opacity:.1
+}
+
+.entry .text a.link:hover::after{
+    opacity:.3
+}
+
+.entry .quote h3{
+    letter-spacing:-1px;
+    font:400 25px/2em "Georgia"
+}
+
+.entry .text .quote-symbol{
+    position:absolute;
+    top:-25px;
+    left:-5px;
+    font:160px "arial";
+    opacity:.1
+}
+
+.entry .text .source{
+    margin:20px 0 0 0;
+    text-align:right
+}
+
+.entry .text .source .odd{
+    display:inline;
+    background:transparent
+}
+
+.entry .captions,
+.entry .details{
+    padding:40px 0 0
+}
+
+.entry .details{
+    position:relative;
+    padding:10px 0;
+    text-align:left;
+    border-bottom:2px solid #f2f2f2
+}
+
+.entry .details,
+.entry .details a{
+    color:#7c7c7c
+}
+
+.entry .details a:hover{
+    color:#777777
+}
+
+.entry .details .tags{
+    margin:0 0 20px
+}
+
+.entry .details .tags a{
+    margin:0 10px 0 0
+}
+
+.entry .details .tags a,
+.entry .read_more_container a{
+    display:inline-block;
+    margin:0 10px 10px 0;
+    padding:5px 10px;
+    text-transform:lowercase;
+    font-size:.95em;
+    color:#777777;
+    background:rgba(119,119,119,.1);
+    box-shadow:0 0 0 1px rgba(119,119,119,.3);
+    border-radius:1px
+}
+
+.entry .details .tags a:hover,
+.entry .read_more_container a:hover{
+    box-shadow:0 0 0 1px rgba(119,119,119,.5)
+}
+
+.entry .read_more_container a:first-letter{
+    text-transform:uppercase
+}
+
+.entry .read_more_container a:after{
+    content:"Â»";
+    vertical-align:1px;
+    margin:0 0 0 10px
+}
+
+.entry .details .buttons{
+    display:inline;
+    float:right;
+    margin:3px 0 0 0
+}
+
+.entry .details .buttons a{
+    display:inline-block;
+    font:17px "icon";
+    margin:0 0 0 10px
+}
+
+.entry .details .buttons a.like-button{
+    position:relative;
+    cursor:pointer
+}
+
+.entry .details .buttons .like_button{
+    bottom:0;
+    left:0
+}
+
+.entry .details ul.share{
+    display:none;
+    position:absolute;
+    width:140px;
+    bottom:65px;
+    right:-1px;
+    padding:10px 20px;
+    background:rgba(0,0,0,.85);
+    box-shadow:0 3px 7px 2px rgba(0,0,0,.3);
+    border-radius:3px;
+    z-index:10
+}
+
+.entry .details ul.share:before{
+    content:"";
+    pointer-events:none;
+    position:absolute;
+    display:block;
+    bottom:-10px;
+    margin:0 0 0 40px;
+    padding:0;
+    width:0;
+    height:0;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-top:10px solid rgba(0,0,0,.8);
+    background:transparent
+}
+
+.entry .details ul.share a{
+    display:block;
+    margin:6px 0;
+    list-style-type:none;
+    color:#fff !important
+}
+
+.entry .details ul.share a:hover{
+    opacity:.4
+}
+
+.entry .details ul.share a span{
+    display:inline-block;
+    width:25px;
+    font:13px "icon";
+    opacity:.8
+}
+
+/*      End-Entry       */
+
+#header,
+
+.entry .text,
+.entry .media,
+.entry .captions,
+.entry .details,
+#post-info,
+#pagination-post,
+#pagination,
+#footer,
+#permalink .permalink-box{
+    width:90%;
+    max-width:700px;
+    margin-right:auto;
+    margin-left:auto;
+    text-align:center;
+}
+
+.footer{
+    margin-top:  15px;
+    border-top: 2px solid #f2f2f2;
+}
+
+/*      Pagination      */
+
+a#load{
+    position:relative;
+    cursor:pointer;
+    display:block;
+    margin:-30px 0 0;
+    text-align:center;
+    font:700 15px "Helvetica Neue";
+    color:#555555;
+    z-index:10
+}
+
+a#nomore{
+    pointer-events:none;
+    opacity:0
+}
+
+#infscr-loading,
+a#nomore{
+    position:absolute;
+    display:block;
+    width:300px;
+    height:40px;
+    bottom:-75px;
+    left:50%;
+    padding:10px;
+    text-align:center;
+    font:700 15px "Helvetica Neue";
+    color:#555555;
+    margin:0 0 0 -150px;
+    background:#ffffff;
+    z-index:12
+}
+
+#infscr-loading img{
+    margin:auto
+}
+
+.center{
+    text-align: center;
+}
+
+.right{
+    text-align: right;
+}
+
+/*      Permalink       */
+
+#permalink .permalink-box{
+    margin:45px auto 0;
+    padding:40px 0 0;
+    border-top:2px solid #f2f2f2
+}
+
+#permalink .permalink-box ol.notes{
+    margin:20px 0 0 -37px;
+    list-style-type:none
+}
+
+#permalink .permalink-box ol.notes li.note{
+    padding:3px 0
+}
+
+#permalink .permalink-box ol.notes li.more_notes_link_container{
+    border-top:1px solid #f2f2f2
+}
+
+#permalink .permalink-box ol.notes li.more_notes_link_container,
+#permalink .permalink-box ol.notes li.more_notes_link_container a.more_notes_link{
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font:11px Helvetica Neue;
+    color:#777777
+}
+
+#permalink .permalink-box ol.notes li.like:after,
+#permalink .permalink-box ol.notes li.reblog:after,
+#permalink .permalink-box ol.notes li.reply:after,
+#permalink .permalink-box ol.notes li.answer:after,
+#permalink .permalink-box ol.notes li.original_post:after{
+    float:right;
+    margin:-17px 0 0 0;
+    font:14px icon;
+    opacity:.5
+}
+
+#permalink .permalink-box ol.notes li.like:after{content:"z"}#permalink .permalink-box ol.notes li.reblog:after{content:"c"}#permalink .permalink-box ol.notes li.reply:after{content:"k";font:13px icon}#permalink .permalink-box ol.notes li.answer:after{content:"k";font-size:11px}#permalink .permalink-box ol.notes li.original_post:after{content:"d"}
+
+#permalink .permalink-box ol.notes img{
+    display:inline;
+    padding:0 10px 0 0
+}
+
+#permalink .permalink-box ol.notes li.more_notes_link_container{
+    margin:30px 0 0 0;
+    padding:25px 0 0 0
+}
+
+/*      Animation       */
+
+#posts,#loading{
+    opacity:0;
+    -webkit-transition:opacity 1s ease,height .5s ease;
+    transition:opacity 1s ease,height .5s ease
+}
+
+#loading{
+    position:absolute;
+    width:50px;
+    height:50px;
+    top:300px;
+    left:50%;
+    margin:0 0 0 -25px;
+    border-radius:2px;
+    z-index:100;
+    background:url('http://static.tumblr.com/j6tha7z/AFfmuponn/ajax-loader.gif') no-repeat center #fff;
+    opacity:1;
+    pointer-events:none;
+    filter:alpha(opacity = 0)
+}
+
+/*      Responsive      */
+
+@media screen and (max-width:500px){
+
+    #header{
+        margin:0 auto 60px;
+        padding:0 0 30px;
+        text-align:center
+    }
+
+    #header img{
+        display:block;
+        height:auto;
+        width:80px;
+        margin:0 auto
+    }
+
+    #header #title{
+        display:inline-block;
+        margin:35px auto 0;
+        vertical-align:auto
+    }
+
+    #header #title h1{
+        margin:0
+    }
+
+    #header #navigation{
+        float:none;
+        display:block;
+        margin:35px auto 20px;
+        text-align:center
+    }
+
+    #header #navigation li{
+        float:none
+    }
+
+    #header #navigation li a{
+        margin:0 10px
+    }
+
+    #permalink .permalink-box,
+    #permalink .entry{
+        width:90% !important;
+        max-width:500px;
+        margin:0 auto 30px !important
+    }
+
+    #permalink .permalink-box{
+        text-align:center !important
+    }
+
+    #permalink .permalink-box ol.notes img,
+    #permalink .permalink-box ol.notes li:after{
+        display:none
+    }
+
+}
+
+/*      End-Responsive      */
+
+/*      Adjustments     */
+
+
+img{border-radius:3px}
+
+
+
+#pagination{opacity:0 !important}
+#pagination a{padding:0 !important;height:0 !important}
+
+
+#posts,#pagination{opacity:1}
+#loading{opacity:0}
