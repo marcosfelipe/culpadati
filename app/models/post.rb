@@ -22,7 +22,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.ultimate
-    where('hint = 0')
+    where('hint = "f" ')
   end
 
 end

@@ -15,7 +15,7 @@ class Admin::HintsController < Admin::ApplicationController
   end
 
   def update
-    @post.hint = nil
+    @post.hint = 0
     @post.save
     redirect_to admin_hints_path, notice:'Post criado!'
   end
